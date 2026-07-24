@@ -1,4 +1,16 @@
 aid: blueboard
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/blueboard.png
 name: Blueboard
 description: Blueboard is a company surfaced as a portfolio company of bullpen-capital and added to the
   API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
@@ -11,7 +23,20 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+x-enrichment:
+  last_run: '2026-07-18'
+  status: no-surface
+  finding: blueboard.com resolves to a GoDaddy parking lander (JS redirect to /lander,
+    ap="parking", LANDER_SYSTEM="PW") with a 200 catch-all on every path. No live API,
+    developer portal, documentation, OpenAPI, or /.well-known/ surface exists. Likely
+    a defunct company (blueboard.com) with a now-parked domain. Nothing to enrich
+    without fabrication; re-check if the domain is redeveloped.
+  probed_hosts:
+  - {host: www.blueboard.com, http: 200, note: parking-lander-catch-all}
+  - {host: api.blueboard.com, dns: NXDOMAIN}
+  - {host: developer.blueboard.com, dns: NXDOMAIN}
+  - {host: docs.blueboard.com, dns: NXDOMAIN}
 tags:
 - Company
 apis: []
